@@ -1,0 +1,22 @@
+// This file is generated. Do not modify by hand.
+// XML documentation file not found. To check if public methods have XML comments,
+// make sure the XML doc file is present and located next to the scraped dll
+namespace Unity.Services.Qos
+{
+    public interface IQosResult
+    {
+        public abstract int AverageLatencyMs { get; }
+        public abstract float PacketLossPercent { get; }
+        public abstract string Region { get; }
+    }
+
+    public interface IQosService
+    {
+        public abstract System.Threading.Tasks.Task<System.Collections.Generic.IList<Unity.Services.Qos.IQosResult>> GetSortedQosResultsAsync(string service, System.Collections.Generic.IList<string> regions);
+    }
+
+    public static class QosService
+    {
+        public static Unity.Services.Qos.IQosService Instance { get; }
+    }
+}

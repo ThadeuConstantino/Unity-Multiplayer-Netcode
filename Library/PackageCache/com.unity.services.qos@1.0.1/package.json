@@ -1,0 +1,28 @@
+{
+  "name": "com.unity.services.qos",
+  "displayName": "QoS",
+  "version": "1.0.1",
+  "unity": "2020.3",
+  "description": "Provides connectivity Quality of Service (QoS) measurements from Unity game clients to different Unity game services running in various geographic regions.",
+  "dependencies": {
+    "com.unity.services.core": "1.4.0",
+    "com.unity.modules.unitywebrequest": "1.0.0",
+    "com.unity.nuget.newtonsoft-json": "3.0.2",
+    "com.unity.services.authentication": "2.0.0",
+    "com.unity.collections": "1.2.3"
+  },
+  "_upm": {
+    "changelog": "### Changed\n- Updated dependencies: Core to 1.4.0, Newtonsoft JSON to 3.0.2\n- Fixed an issue making the public interface (QosService.Instance.GetSortedQosResultsAsync(...))\nunusable from the default Unity assembly (Assembly-CSharp)"
+  },
+  "relatedPackages": {
+    "com.unity.services.qos.tests": "1.0.1"
+  },
+  "upmCi": {
+    "footprint": "72dcafc2335490ee89035efd73b6be5e6426ae44"
+  },
+  "repository": {
+    "url": "https://github.cds.internal.unity3d.com/unity/operate-services-sdk.git",
+    "type": "git",
+    "revision": "d37589428e69cd783dfb205863626964628b40a5"
+  }
+}

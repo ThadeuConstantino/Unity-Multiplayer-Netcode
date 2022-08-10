@@ -1,0 +1,45 @@
+{
+  "name": "com.unity.services.relay",
+  "displayName": "Relay",
+  "version": "1.0.3",
+  "unity": "2020.3",
+  "_upm": {
+    "changelog": "* Update com.unity.nuget.newtonsoft-json dependency to 3.0.2\n* Update com.unity.services.qos dependency to 1.0.1"
+  },
+  "description": "Connect the players of your peer-hosted games with Relay. Your games will also benefit from improved reliability, privacy and the ability to communicate across platforms. To get started, enable listen-server UDP networking for your project on the Unity Dashboard.\n\nFeatures include an allocation service to join game hosts via code, multi-region support, and more.",
+  "dependencies": {
+    "com.unity.services.core": "1.4.0",
+    "com.unity.services.authentication": "2.0.0",
+    "com.unity.services.qos": "1.0.1",
+    "com.unity.modules.unitywebrequest": "1.0.0",
+    "com.unity.modules.unitywebrequestassetbundle": "1.0.0",
+    "com.unity.modules.unitywebrequestaudio": "1.0.0",
+    "com.unity.modules.unitywebrequesttexture": "1.0.0",
+    "com.unity.modules.unitywebrequestwww": "1.0.0",
+    "com.unity.nuget.newtonsoft-json": "3.0.2",
+    "com.unity.transport": "1.0.0"
+  },
+  "samples": [
+    {
+      "displayName": "Simple Relay Sample",
+      "description": "A sample showcasing the features of the Relay SDK.",
+      "path": "Samples~/SimpleRelay"
+    },
+    {
+      "displayName": "Interactive Relay Sample (using UTP)",
+      "description": "A sample showcasing the features of the Relay SDK that can be tested with multiple clients. Has a persistent connection to the relay server using UTP.",
+      "path": "Samples~/InteractiveRelayUtp"
+    }
+  ],
+  "relatedPackages": {
+    "com.unity.services.relay.tests": "1.0.3"
+  },
+  "upmCi": {
+    "footprint": "85a68c1591c2191630a525abb416e7d7ddab4d0c"
+  },
+  "repository": {
+    "url": "https://github.cds.internal.unity3d.com/unity/com.unity.services.relay.git",
+    "type": "git",
+    "revision": "d8a812545068ef0053b0c0cb6d78efea9d2fcaad"
+  }
+}

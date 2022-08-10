@@ -1,0 +1,12 @@
+# https://dotnet.github.io/docfx/tutorial/howto_filter_out_unwanted_apis_attributes.html
+
+apiRules:
+  - exclude:
+    uidRegex: Tests
+    type: Namespace
+  - exclude:
+    uidRegex: Editor$
+    type: Namespace
+  - exclude:
+    uidRegex: Samples$
+    type: Namespace

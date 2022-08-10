@@ -1,0 +1,34 @@
+// This file is generated. Do not modify by hand.
+// XML documentation file not found. To check if public methods have XML comments,
+// make sure the XML doc file is present and located next to the scraped dll
+namespace Unity.Services.Authentication.Editor
+{
+    public abstract class IdProviderCustomSettingsElement : UnityEngine.UIElements.VisualElement
+    {
+        protected System.Func<string> m_GatewayTokenCallback;
+        public event System.Action<Unity.Services.Authentication.Editor.IdProviderCustomSettingsElement, System.Exception> Error;
+        public event System.Action<Unity.Services.Authentication.Editor.IdProviderCustomSettingsElement, bool> Waiting;
+        public string GatewayToken { get; }
+        protected IdProviderCustomSettingsElement(System.Func<string> gatewayTokenCallback) {}
+        public abstract void Refresh();
+    }
+
+    public class IdProviderOptions
+    {
+        public string ClientIdDisplayName { get; set; }
+        public string ClientSecretDisplayName { get; set; }
+        public Unity.Services.Authentication.Editor.IdProviderOptions.CreateCustomSettingsElementDelegate CustomSettingsElementCreator { get; set; }
+        public string DisplayName { get; set; }
+        public string IdProviderType { get; set; }
+        public bool NeedClientSecret { get; set; }
+        public IdProviderOptions() {}
+        public delegate Unity.Services.Authentication.Editor.IdProviderCustomSettingsElement CreateCustomSettingsElementDelegate(string idDomain, System.Func<string> servicesGatewayTokenCallback, bool skipConfirmation);
+    }
+
+    public static class IdProviderRegistry
+    {
+        public static Unity.Services.Authentication.Editor.IdProviderOptions GetOptions(string idProviderType);
+        public static void Register(Unity.Services.Authentication.Editor.IdProviderOptions idProviderOptions);
+        public static void Unregister(string idProviderType);
+    }
+}

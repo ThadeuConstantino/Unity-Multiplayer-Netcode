@@ -1,0 +1,11 @@
+{
+	"name": "nuget.mono-cecil",
+	"displayName": "Mono Cecil",
+	"version": "1.0.0",
+	"type": "shim",
+	"unity": "2018.4",
+	"description": "The mono cecil library from https://www.nuget.org/packages/Mono.Cecil/",
+	"dependencies": {
+		"com.unity.nuget.mono-cecil": "1.10.1"
+	}
+}

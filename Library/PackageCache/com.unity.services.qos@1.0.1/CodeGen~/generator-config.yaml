@@ -1,0 +1,14 @@
+generatorName: csharp-unity
+outputDir: ../../
+inputSpec: build/qos.openapi.filtered.yaml
+packageName: com.unity.services.qos
+additionalProperties:
+  unityVersion: "2020.3"
+  packageVersion: "1.0.0-pre.1"
+  unityPackageNamespace: "Unity.Services.Qos"
+  unityServiceName: "QosDiscovery"
+  unityPackageDescription: "Provides connectivity Quality of Service (QoS) measurements from Unity game clients to different Unity game services running in various geographic regions."
+  useUnityAuthentication: true
+  internalAccessOnly: [http, jsonobject, apis, services, models]
+  outputFormat: assembly
+  createClientInstances: false

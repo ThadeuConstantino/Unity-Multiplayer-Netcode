@@ -1,0 +1,99 @@
+// This file is generated. Do not modify by hand.
+// XML documentation file not found. To check if public methods have XML comments,
+// make sure the XML doc file is present and located next to the scraped dll
+namespace Unity.Services.Authentication
+{
+    public static class AuthenticationErrorCodes
+    {
+        public static readonly int AccountAlreadyLinked;
+        public static readonly int AccountLinkLimitExceeded;
+        public static readonly int ClientInvalidProfile;
+        public static readonly int ClientInvalidUserState;
+        public static readonly int ClientNoActiveSession;
+        public static readonly int ClientUnlinkExternalIdNotFound;
+        public static readonly int InvalidParameters;
+        public static readonly int InvalidSessionToken;
+        public static readonly int MinValue;
+    }
+
+    public sealed class AuthenticationException : Unity.Services.Core.RequestFailedException
+    {
+        public static Unity.Services.Core.RequestFailedException Create(int errorCode, string message, System.Exception innerException = default(System.Exception));
+    }
+
+    [System.Runtime.CompilerServices.Extension] public static class AuthenticationExtensions
+    {
+        [System.Runtime.CompilerServices.Extension] public static Unity.Services.Core.InitializationOptions SetProfile(Unity.Services.Core.InitializationOptions options, string profile);
+    }
+
+    public static class AuthenticationService
+    {
+        public static Unity.Services.Authentication.IAuthenticationService Instance { get; }
+    }
+
+    public interface IAuthenticationService
+    {
+        public event System.Action Expired;
+        public event System.Action SignedIn;
+        public event System.Action SignedOut;
+        public event System.Action<Unity.Services.Core.RequestFailedException> SignInFailed;
+        public abstract string AccessToken { get; }
+        public abstract bool IsAuthorized { get; }
+        public abstract bool IsExpired { get; }
+        public abstract bool IsSignedIn { get; }
+        public abstract string PlayerId { get; }
+        public abstract Unity.Services.Authentication.PlayerInfo PlayerInfo { get; }
+        public abstract string Profile { get; }
+        public abstract bool SessionTokenExists { get; }
+        public abstract void ClearSessionToken();
+        public abstract System.Threading.Tasks.Task DeleteAccountAsync();
+        public abstract System.Threading.Tasks.Task<Unity.Services.Authentication.PlayerInfo> GetPlayerInfoAsync();
+        public abstract System.Threading.Tasks.Task LinkWithAppleAsync(string idToken, Unity.Services.Authentication.LinkOptions options = default(Unity.Services.Authentication.LinkOptions));
+        public abstract System.Threading.Tasks.Task LinkWithFacebookAsync(string accessToken, Unity.Services.Authentication.LinkOptions options = default(Unity.Services.Authentication.LinkOptions));
+        public abstract System.Threading.Tasks.Task LinkWithGoogleAsync(string idToken, Unity.Services.Authentication.LinkOptions options = default(Unity.Services.Authentication.LinkOptions));
+        public abstract System.Threading.Tasks.Task LinkWithGooglePlayGamesAsync(string authCode, Unity.Services.Authentication.LinkOptions options = default(Unity.Services.Authentication.LinkOptions));
+        public abstract System.Threading.Tasks.Task LinkWithSteamAsync(string sessionTicket, Unity.Services.Authentication.LinkOptions options = default(Unity.Services.Authentication.LinkOptions));
+        public abstract System.Threading.Tasks.Task SignInAnonymouslyAsync(Unity.Services.Authentication.SignInOptions options = default(Unity.Services.Authentication.SignInOptions));
+        public abstract System.Threading.Tasks.Task SignInWithAppleAsync(string idToken, Unity.Services.Authentication.SignInOptions options = default(Unity.Services.Authentication.SignInOptions));
+        public abstract System.Threading.Tasks.Task SignInWithFacebookAsync(string accessToken, Unity.Services.Authentication.SignInOptions options = default(Unity.Services.Authentication.SignInOptions));
+        public abstract System.Threading.Tasks.Task SignInWithGoogleAsync(string idToken, Unity.Services.Authentication.SignInOptions options = default(Unity.Services.Authentication.SignInOptions));
+        public abstract System.Threading.Tasks.Task SignInWithGooglePlayGamesAsync(string authCode, Unity.Services.Authentication.SignInOptions options = default(Unity.Services.Authentication.SignInOptions));
+        public abstract System.Threading.Tasks.Task SignInWithSteamAsync(string sessionTicket, Unity.Services.Authentication.SignInOptions options = default(Unity.Services.Authentication.SignInOptions));
+        public abstract void SignOut(bool clearCredentials = False);
+        public abstract void SwitchProfile(string profile);
+        public abstract System.Threading.Tasks.Task UnlinkAppleAsync();
+        public abstract System.Threading.Tasks.Task UnlinkFacebookAsync();
+        public abstract System.Threading.Tasks.Task UnlinkGoogleAsync();
+        public abstract System.Threading.Tasks.Task UnlinkGooglePlayGamesAsync();
+        public abstract System.Threading.Tasks.Task UnlinkSteamAsync();
+    }
+
+    public sealed class Identity
+    {
+        public string TypeId;
+        public string UserId;
+    }
+
+    public sealed class LinkOptions
+    {
+        public bool ForceLink { get; set; }
+        public LinkOptions() {}
+    }
+
+    public sealed class PlayerInfo
+    {
+        public System.Nullable<System.DateTime> CreatedAt { get; }
+        public string Id { get; }
+        public System.Collections.Generic.List<Unity.Services.Authentication.Identity> Identities { get; }
+        public string GetAppleId();
+        public string GetFacebookId();
+        public string GetGoogleId();
+        public string GetSteamId();
+    }
+
+    public sealed class SignInOptions
+    {
+        public bool CreateAccount { get; set; }
+        public SignInOptions() {}
+    }
+}
